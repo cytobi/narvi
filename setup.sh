@@ -17,7 +17,7 @@ then
     sudo apt install jq -y
 fi
 
-# create non-existent environment files
+# create environment files
 touch etc/secrets.sh
 echo "#!/bin/bash" > etc/secrets.sh
 echo "Please enter your Notion API key:"
@@ -26,5 +26,7 @@ echo "NOTION_API_KEY=\"$NOTION_API_KEY\"" >> etc/secrets.sh
 echo "Please enter your Notion database ID:"
 read NOTION_DB_ID
 echo "NOTION_DB_ID=\"$NOTION_DB_ID\"" >> etc/secrets.sh
+
+echo "NARVI_PATH=\"$(pwd)\"" >> etc/secrets.sh
 
 echo "Setup complete!"
