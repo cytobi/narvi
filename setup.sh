@@ -21,7 +21,7 @@ fi
 touch etc/secrets.sh
 echo "#!/bin/bash" > etc/secrets.sh
 echo "Please enter your Notion API key:"
-read NOTION_API_KEY
+read -s NOTION_API_KEY
 echo "NOTION_API_KEY=\"$NOTION_API_KEY\"" >> etc/secrets.sh
 echo "Please enter your Notion database ID:"
 read NOTION_DB_ID
