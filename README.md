@@ -10,4 +10,4 @@ a notion cli written in bash, tailored to my needs specifically
 - enter the api key when prompted
 - enter the database id when prompted
 - allow narvi to access this database by opening the meatballs menu (the three dots) in the upper right corner and clicking "Add connections" and then "narvi"
-- run `bash src/getdb.sh` to get the database and test if everything works
+- run `narvi getdb` to get the database and test if everything works

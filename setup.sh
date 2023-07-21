@@ -29,4 +29,8 @@ echo "NOTION_DB_ID=\"$NOTION_DB_ID\"" >> etc/secrets.sh
 
 echo "NARVI_PATH=\"$(pwd)\"" >> etc/secrets.sh
 
+echo "alias narvi=\"bash "$(pwd)"/src/narvi.sh\"" >> ~/.bashrc
+
+source ~/.bashrc
+
 echo "Setup complete!"
