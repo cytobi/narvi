@@ -1,5 +1,5 @@
 #!#!/bin/bash
-# small script to retrieve the database from notion to test the API
+# script to add a task to the notion database under a specific tag
 
 # get script directory
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
