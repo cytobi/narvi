@@ -45,4 +45,11 @@ JSON=`curl -s $ENDPOINT \
         "sorts": '"$SORTS"'
     }'`
 
+# check for errors
+ERROR=`echo $JSON | jq '.object' | tr -d '"'`
+if [ $ERROR == "error" ]; then
+    echo "Error: $JSON"
+    exit 1
+fi
+
 echo $JSON | jq '.results[].properties.Name.title[].text.content' | tr -d '"' | sed 's/^/• /'
