@@ -23,6 +23,8 @@ elif [ "$1" == "add" ]; then
     bash $SCRIPT_DIR/addtask.sh "$2" "$3"
 elif [ "$1" == "complete" ]; then
     bash $SCRIPT_DIR/complete.sh "$2"
+elif [ "$1" == "cache" ]; then
+    bash $SCRIPT_DIR/cache.sh "${@:2}"
 else
     echo "Command not found"
     exit 1

@@ -26,11 +26,15 @@ echo "NOTION_API_KEY=\"$NOTION_API_KEY\"" >> etc/secrets.sh
 echo "Please enter your Notion database ID:"
 read NOTION_DB_ID
 echo "NOTION_DB_ID=\"$NOTION_DB_ID\"" >> etc/secrets.sh
-
 echo "NARVI_PATH=\"$(pwd)\"" >> etc/secrets.sh
 
+# add alias to bashrc
 echo "alias narvi=\"bash "$(pwd)"/src/narvi.sh\"" >> ~/.bashrc
-
 source ~/.bashrc
+
+# create cache directory and file
+mkdir cache
+cd cache
+touch narvi.cache
 
 echo "Setup complete!"
