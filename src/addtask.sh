@@ -40,6 +40,12 @@ curl -s 'https://api.notion.com/v1/pages' \
     }
   }' > /dev/null
 
+# check whether api could be reached
+if [ $? -ne 0 ]; then
+    echo "Error: could not reach notion api"
+    exit 1
+fi
+
 # different output depending on whether tag was provided
 if [ ! -z "$2" ]; then
     echo 'added task "'$1'" to tag "'$2'"'

@@ -32,6 +32,12 @@ PAGE_ID=`curl -s -X POST 'https://api.notion.com/v1/search' \
     "page_size": 100
   }' | jq '.results[] | select(.properties.Status.status.name != "done") | .id'`
 
+# check whether api could be reached
+if [ $? -ne 0 ]; then
+    echo "Error: could not reach notion api"
+    exit 1
+fi
+
 # remove quotes from page id
 PAGE_ID=`echo $PAGE_ID | tr -d '"'`
 

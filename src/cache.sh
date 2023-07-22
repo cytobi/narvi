@@ -16,6 +16,13 @@ if [ -z "$1" ]; then
     exit 0
 fi
 
-# call narvi piping into cache file
+# check whether api can be reached
+curl -s https://api.notion.com/v1/databases/$NOTION_DB_ID > /dev/null
+if [ $? -ne 0 ]; then
+    echo "Error: could not reach notion api"
+    exit 1
+fi
+
+# call narvi piping into cache file (only when api is reachable)
 bash $SCRIPT_DIR/narvi.sh "$@" > $SCRIPT_DIR/../cache/narvi.cache
 echo 'cached output for command "'"$1"'"'

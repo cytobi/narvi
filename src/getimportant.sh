@@ -45,6 +45,12 @@ JSON=`curl -s $ENDPOINT \
         "sorts": '"$SORTS"'
     }'`
 
+# check whether api could be reached
+if [ $? -ne 0 ]; then
+    echo "Error: could not reach notion api"
+    exit 1
+fi
+
 # check for errors
 ERROR=`echo $JSON | jq '.object' | tr -d '"'`
 if [ $ERROR == "error" ]; then
