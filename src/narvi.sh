@@ -25,6 +25,8 @@ elif [ "$1" == "complete" ]; then
     bash $SCRIPT_DIR/complete.sh "$2"
 elif [ "$1" == "cache" ]; then
     bash $SCRIPT_DIR/cache.sh "${@:2}"
+elif [ "$1" == "save" ]; then
+    bash $SCRIPT_DIR/save.sh "${@:2}"
 else
     echo "Command not found"
     exit 1

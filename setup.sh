@@ -37,4 +37,10 @@ mkdir cache
 cd cache
 touch narvi.cache
 
+# create file to save commands to be executed later
+touch saved.sh
+
+# cd back out of cache directory
+cd ..
+
 echo "Setup complete!"
